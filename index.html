@@ -1,11 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ria Triana Azizah</title>
-</head>
-<body>
-    
-</body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Playfair+Display:ital@0;1&family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        25% {
+          background-position: 50% 100%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        75% {
+          background-position: 50% 0%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(
+          -45deg,
+          #ffe4e1,
+          #e6e6fa,
+          #f0fff0,
+          #ffe4b5,
+          #fff0f5,
+          #f0f8ff
+        );
+        background-size: 400% 400%;
+        animation: gradient 20s ease infinite;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(8px);
+        z-index: 1000;
+      }
+
+      .brand {
+        font-family: "Dancing Script", cursive;
+        font-size: 1.5rem;
+        color: #d81b60;
+        text-decoration: none;
+      }
+
+      .music-btn {
+        background: none;
+        border: none;
+        color: #d81b60;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .music-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.25);
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        max-width: 90%;
+        width: 600px;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      h1 {
+        color: #d81b60;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        font-family: "Cinzel", serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        letter-spacing: 1px;
+      }
+
+      #quote-text {
+        color: #ad1457;
+        font-size: 1.3rem;
+        line-height: 1.6;
+        font-style: italic;
+        font-family: "Playfair Display", serif;
+        transition: opacity 0.5s ease-in-out;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+      }
+
+      .fade {
+        opacity: 0;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        #quote-text {
+          font-size: 1.1rem;
+        }
+        .brand {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 1.5rem;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        .navbar {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#" class="brand">Ruang Rindu</a>
+      <button class="music-btn" onclick="toggleMusic()">
+        <i class="fas fa-play"></i>
+      </button>
+    </nav>
+    <div class="content">
+      <div class="container">
+        <h1>Ria Triana Azizah</h1>
+        <div id="quote-text"></div>
+      </div>
+    </div>
+
+    <script>
+      const quotes = [
+        "Cinta adalah kekuatan paling kuat yang pernah ada.",
+        "Denganmu, setiap hari terasa istimewa.",
+        "Ketika aku melihatmu, aku melihat masa depanku.",
+        "Cinta sejati adalah ketika kamu dan aku menjadi kita.",
+        "Hatiku milikmu, sekarang dan selamanya.",
+        "Kamu adalah alasan senyumanku setiap hari.",
+        "Cintaku padamu tak berujung seperti lautan.",
+        "Dalam dekapanmu, aku merasa paling aman.",
+        "Hanya dengan memikirkanmu, hari-hariku menjadi lebih baik.",
+        "Kamu adalah napasku, hidupku, dan satu-satunya cintaku.",
+        "Ketika kamu tersenyum, seluruh dunia berhenti dan menatap.",
+        "Kamu adalah mimpi yang menjadi kenyataan.",
+        "Denganmu, hidupku terasa sempurna.",
+        "Aku mencintaimu bukan karena siapa kamu, tetapi siapa aku saat bersamamu.",
+        "Kamu adalah sinar matahari yang menerangi hariku.",
+        "Hatiku berdetak hanya untukmu.",
+        "Takdir membawa kita bersama, dan aku bersyukur untuk itu.",
+        "Kamu adalah cinta dalam hidupku, dan aku tidak bisa meminta lebih.",
+        "Ketika kamu memelukku, semua kekhawatiranku hilang.",
+        "Kamu adalah yang terbaik yang pernah terjadi padaku.",
+        "Cinta kita adalah perjalanan, bukan tujuan.",
+        "Aku mencintaimu lebih dari kata-kata bisa ungkapkan.",
+        "Setiap kali aku melihatmu, aku jatuh cinta lagi.",
+        "Kamu adalah alasan aku bangun setiap pagi.",
+        "Hatiku berdebar-debar hanya dengan mendengar namamu.",
+        "Kamu adalah bintang dalam hidupku yang selalu bersinar terang.",
+        "Aku mencintaimu sekarang dan selamanya.",
+        "Aku merasa paling hidup ketika aku bersamamu.",
+        "Kamu adalah mimpiku yang menjadi kenyataan.",
+        "Hatiku adalah milikmu, selalu dan selamanya.",
+        "Cinta kita lebih kuat dari apa pun yang pernah ada.",
+        "Kamu adalah hidupku, cinta sejatiku.",
+        "Cintaku padamu adalah hal terindah yang pernah aku rasakan.",
+        "Dalam matamu, aku menemukan rumahku.",
+        "Aku tidak bisa membayangkan hidup tanpa kamu.",
+        "Kamu adalah segalanya bagiku.",
+        "Aku bersyukur setiap hari untuk kehadiranmu dalam hidupku.",
+        "Cintaku padamu tidak mengenal batas.",
+        "Kamu adalah yang terbaik dari yang terbaik.",
+        "Ketika aku bersamamu, aku merasa sempurna.",
+        "Hatiku milikmu sekarang dan selamanya.",
+        "Kamu adalah cinta dalam hidupku, dan aku tidak pernah ingin kehilanganmu.",
+        "Setiap hari bersama kamu adalah berkah.",
+        "Kamu adalah alasan senyumanku setiap hari.",
+        "Hatiku berdetak hanya untukmu.",
+        "Kamu adalah mimpiku yang menjadi kenyataan.",
+        "Kamu adalah segalanya bagiku.",
+        "Cinta kita adalah perjalanan, bukan tujuan.",
+        "Aku tidak bisa membayangkan hidup tanpa kamu.",
+        "Kamu adalah bintang dalam hidupku yang selalu bersinar terang.",
+        "Kamu adalah hidupku, cinta sejatiku.",
+        "Ketika aku melihatmu, aku melihat masa depanku.",
+        "Kamu adalah yang terbaik yang pernah terjadi padaku.",
+        "Kamu adalah cinta dalam hidupku, dan aku tidak pernah ingin kehilanganmu.",
+        "Setiap kali aku melihatmu, aku jatuh cinta lagi.",
+        "Kamu adalah sinar matahari yang menerangi hariku.",
+        "Ketika aku bersamamu, aku merasa sempurna.",
+        "Dalam dekapanmu, aku merasa paling aman.",
+        "Kamu adalah yang terbaik dari yang terbaik.",
+        "Kamu adalah hidupku, cinta sejatiku.",
+        "Setiap hari bersama kamu adalah berkah.",
+        "Aku mencintaimu lebih dari kata-kata bisa ungkapkan.",
+        "Kamu adalah cinta dalam hidupku, dan aku tidak bisa meminta lebih.",
+        "Aku mencintaimu sekarang dan selamanya.",
+        "Kamu adalah napasku, hidupku, dan satu-satunya cintaku.",
+        "Takdir membawa kita bersama, dan aku bersyukur untuk itu.",
+        "Kamu adalah segalanya bagiku.",
+        "Aku mencintaimu bukan karena siapa kamu, tetapi siapa aku saat bersamamu.",
+        "Dalam matamu, aku menemukan rumahku.",
+        "Kamu adalah hidupku, cinta sejatiku.",
+        "Hatiku milikmu sekarang dan selamanya.",
+        "Kamu adalah sinar matahari yang menerangi hariku.",
+        "Aku bersyukur setiap hari untuk kehadiranmu dalam hidupku.",
+        "Kamu adalah bintang dalam hidupku yang selalu bersinar terang.",
+        "Cinta kita lebih kuat dari apa pun yang pernah ada.",
+        "Kamu adalah hidupku, cinta sejatiku.",
+        "Kamu adalah hidupku, cinta sejatiku.",
+        "Aku merasa paling hidup ketika aku bersamamu.",
+        "Cinta kita adalah perjalanan, bukan tujuan.",
+        "Kamu adalah mimpiku yang menjadi kenyataan.",
+        "Hatiku milikmu sekarang dan selamanya.",
+        "Setiap hari bersama kamu adalah berkah.",
+        "Kamu adalah bintang dalam hidupku yang selalu bersinar terang.",
+        "Kamu adalah cinta dalam hidupku, dan aku tidak pernah ingin kehilanganmu.",
+        "Ketika aku melihatmu, aku melihat masa depanku.",
+        "Aku tidak bisa membayangkan hidup tanpa kamu.",
+        "Hatiku berdebar-debar hanya dengan mendengar namamu.",
+        "Ketika aku bersamamu, aku merasa sempurna.",
+        "Kamu adalah yang terbaik dari yang terbaik.",
+        "Kamu adalah hidupku, cinta sejatiku.",
+        "Cinta kita lebih kuat dari apa pun yang pernah ada.",
+        "Cintaku padamu adalah hal terindah yang pernah aku rasakan.",
+        "Kamu adalah cinta dalam hidupku, dan aku tidak bisa meminta lebih.",
+        "Aku mencintaimu lebih dari kata-kata bisa ungkapkan.",
+        "Denganmu, hidupku terasa sempurna.",
+      ];
+
+      let currentIndex = 0;
+      const quoteElement = document.getElementById("quote-text");
+      let isPlaying = false;
+      let audio = new Audio("bestpart.mp3");
+
+      function showQuote(index) {
+        quoteElement.classList.add("fade");
+        setTimeout(() => {
+          quoteElement.textContent = quotes[index];
+          quoteElement.classList.remove("fade");
+        }, 500);
+      }
+
+      function rotateQuote() {
+        currentIndex = (currentIndex + 1) % quotes.length;
+        showQuote(currentIndex);
+      }
+
+      function toggleMusic() {
+        const musicBtn = document.querySelector(".music-btn i");
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          audio.play();
+          musicBtn.className = "fas fa-pause";
+        } else {
+          audio.pause();
+          musicBtn.className = "fas fa-play";
+        }
+      }
+
+      showQuote(currentIndex);
+      setInterval(rotateQuote, 15000);
+    </script>
+  </body>
 </html>
